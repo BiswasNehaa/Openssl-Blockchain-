@@ -1,5 +1,5 @@
 
-AES encryption (symmetric encryption)
+AES(Advanced Encryption Standard) encryption => symmetric encryption
 
 1. echo "Hello_World" > b.txt       # b.txt is the file name with Hello text inside it
 
@@ -15,6 +15,6 @@ AES encryption (symmetric encryption)
 
 
 
-Generate RSA Private key:
+Generate RSA (Rivest – Shamir – Adleman) Private key:
 openssl genkey -algorithm RSA -out prt.pem -pkeyopt rsa_kepygen_bits:1024   #generate private key
 openssl pkey -in prt.pem -pubout -out pub.pem          #extracts the PUBLIC KEY from your PRIVATE KEY
