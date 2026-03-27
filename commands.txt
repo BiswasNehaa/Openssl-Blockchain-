@@ -1,0 +1,20 @@
+
+AES encryption (symmetric encryption)
+
+1. echo "Hello_World" > b.txt       # b.txt is the file name with Hello text inside it
+
+2. openssl enc -aes-256-cbc -in b.txt -out b.bin
+ give password for encryption
+
+
+3. openssl enc -base64 -in b.bin -out b.b64     # It converts binary file → Base64 text
+
+
+4. openssl enc -d -aes-256-cbc -in b.bin -out b.dec  #for decryption
+
+
+
+
+Generate RSA Private key:
+openssl genkey -algorithm RSA -out prt.pem -pkeyopt rsa_kepygen_bits:1024   #generate private key
+openssl pkey -in prt.pem -pubout -out pub.pem          #extracts the PUBLIC KEY from your PRIVATE KEY
