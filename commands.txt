@@ -15,6 +15,9 @@ AES(Advanced Encryption Standard) encryption => symmetric encryption
 
 
 
-Generate RSA (Rivest – Shamir – Adleman) Private key:
-openssl genkey -algorithm RSA -out prt.pem -pkeyopt rsa_kepygen_bits:1024   #generate private key
-openssl pkey -in prt.pem -pubout -out pub.pem          #extracts the PUBLIC KEY from your PRIVATE KEY
+Generate RSA (Rivest – Shamir – Adleman) Private key:  (Asymmetric private key)
+
+1. openssl genkey -algorithm RSA -out prt.pem -pkeyopt rsa_kepygen_bits:1024     #generate private key
+2. openssl pkey -in prt.pem -pubout -out pub.pem                                 #extracts the PUBLIC KEY from your PRIVATE KEY
+3. openssl pkeyutl -encrypt -pubin -inkey pub.pem -in b.txt -out rsa_encrypted.bin   #encrypt using public key
+4. openssl pkeyutl -decrypt -inkey prt.pem -in rsa_encrypted.bin -out rsa_decrypted.txt  #decrypt using private key 
